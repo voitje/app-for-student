@@ -11,6 +11,7 @@ import store from "./app/store/store";
 import SideBar from "./app/components/SideBar/SideBar";
 import DrawerNavigation from "./app/components/DrawerNavigation/DrawerNavigation";
 import HeaderExample from "./app/components/TEST";
+import BottomNavigator from "./app/components/BottomNavigator/BottomNavigator";
 
 const RNRedux = () => (
     <Provider store = { store }>
@@ -18,4 +19,4 @@ const RNRedux = () => (
     </Provider>
 );
 
-AppRegistry.registerComponent(appName, () => DrawerNavigation);
+AppRegistry.registerComponent(appName, () => BottomNavigator);

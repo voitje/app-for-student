@@ -3,20 +3,15 @@ import {View, Text, StyleSheet, Dimensions} from 'react-native';
 import MenuButton from "../components/MenuButton/MenuButton";
 import NewsItem from "../components/NewsItem/NewsItem";
 import Header from "../components/Header/Header";
+import News from "../components/News/News";
 
-class News extends Component {
+class NewsScreen extends Component {
     static navigationOptions = {
         title: 'News',
     };
     render() {
         return (
-                <View styles={styles.container}>
-                    <View styles={styles.header}>
-                        <MenuButton navigation={this.props.navigation}/>
-                    </View>
-                    {/*<Text style={{fontSize: 30}}>News</Text>*/}
-                    <NewsItem/>
-                </View>
+                <News/>
         );
     }
 }
@@ -24,15 +19,15 @@ class News extends Component {
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
-        height: Dimensions.get('window').height,
-        width: Dimensions.get('window').width*0.85,
-        backgroundColor: 'blue',
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: 'pink',
     },
     header: {
         height: Dimensions.get('window').height,
-        width: Dimensions.get('window').width*0.15,
+        width: Dimensions.get('window').width,
         backgroundColor: 'blue',
     },
 });
 
-export default News;
+export default NewsScreen;

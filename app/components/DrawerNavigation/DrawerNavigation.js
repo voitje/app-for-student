@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import {
     createSwitchNavigator,
-    createAppContainer,
 } from 'react-navigation';
 import { createDrawerNavigator } from 'react-navigation-drawer';
-import { createStackNavigator } from 'react-navigation-stack';
+import { createStackNavigator, createBottomTabNavigator, createAppContainer, } from 'react-navigation';
 import { View, Text, StyleSheet, Button, Image, Dimensions} from 'react-native';
-import News from '../../screens/NewsScreen';
+import NewsScreen from '../../screens/NewsScreen';
 import Achivement from "../../screens/AchivementScreen";
 import Documents from "../../screens/DocumentsScreen";
 import Settings from "../../screens/SettingsScreen";
@@ -24,7 +23,7 @@ const DrawerConfig = {
 const DrawerNavigator = createDrawerNavigator (
     {
         News: {
-            screen: News
+            screen: NewsScreen
         },
         Settings: {
             screen: Settings

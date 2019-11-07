@@ -8,8 +8,8 @@ class Settings extends Component {
     };
     render() {
         return (
-            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-                <MenuButton navigation={this.props.navigation}/>
+            <View style={{ flex: 1, alignItems: 'center',
+                justifyContent: 'center', backgroundColor: 'blue' }}>
                 <Text style={{fontSize: 30}}>Settings</Text>
             </View>
         );

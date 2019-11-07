@@ -8,7 +8,7 @@ import {styles} from "./styles";
 class NewsItem extends Component {
     render() {
         return (
-            <View styles={styles.container}>
+            <View style={styles.container}>
                     <Content padder>
                         <Card>
                             <CardItem header bordered>
