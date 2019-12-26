@@ -34,7 +34,8 @@ class Article extends Component {
                         marginHorizontal: 5,
                         textShadowColor: '#00000f',
                         textShadowOffset: { width: 3, height: 3 },
-                        textShadowRadius: 3
+                        textShadowRadius: 3,
+
                     }}
                     image={{
                         uri:
@@ -51,7 +52,6 @@ class Article extends Component {
                         <Text
                             style={{
                                 margin: 5,
-                                fontStyle: 'italic',
                                 color: '#b2bec3',
                                 fontSize: 10
                             }}
@@ -61,7 +61,6 @@ class Article extends Component {
                         <Text
                             style={{
                                 margin: 5,
-                                fontStyle: 'italic',
                                 color: '#b2bec3',
                                 fontSize: 10
                             }}
