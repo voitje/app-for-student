@@ -8,7 +8,7 @@ import { View, Text, StyleSheet, Button, Image, Dimensions} from 'react-native';
 import NewsScreen from '../../screens/NewsScreen';
 import Achivement from "../../screens/AchivementScreen";
 import Documents from "../../screens/DocumentsScreen";
-import Settings from "../../screens/SettingsScreen";
+import Other from "../../screens/OtherScreen";
 import MenuDrawer from "../MenuDrawer/MenuDrawer";
 
 const WIDTH = Dimensions.get('window').width;
@@ -26,7 +26,7 @@ const DrawerNavigator = createDrawerNavigator (
             screen: NewsScreen
         },
         Settings: {
-            screen: Settings
+            screen: Other
         }
     },
     DrawerConfig

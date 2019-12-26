@@ -8,9 +8,6 @@ import {name as appName} from './app.json';
 import React from 'react';
 import { Provider } from 'react-redux';
 import store from "./app/store/store";
-import SideBar from "./app/components/SideBar/SideBar";
-import DrawerNavigation from "./app/components/DrawerNavigation/DrawerNavigation";
-import HeaderExample from "./app/components/TEST";
 import BottomNavigator from "./app/components/BottomNavigator/BottomNavigator";
 
 const RNRedux = () => (
@@ -19,4 +16,4 @@ const RNRedux = () => (
     </Provider>
 );
 
-AppRegistry.registerComponent(appName, () => BottomNavigator);
+AppRegistry.registerComponent(appName, RNRedux);
