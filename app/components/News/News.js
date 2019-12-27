@@ -18,7 +18,7 @@ class News extends Component {
     fetchNews = () => {
         getUSANews()
             .then(articles => {
-                this.setState({ articles, refreshing: false }, () => {console.log(this.state.articles)});
+                this.setState({ articles, refreshing: false }, () => {console.log('FETCH', this.state.articles)});
             })
             .catch(() => this.setState({ refreshing: false }));
     };
@@ -29,17 +29,17 @@ class News extends Component {
 
     render() {
         return (
-                this.state.articles.length > 0
+                this.state.refreshing
             ?
-                <FlatList
-                data={this.state.articles}
-                renderItem={({item}) =>  <Article article={item}/>}
-                keyExtractor={item => item.url}
-                refreshing={this.state.refreshing}
-                onRefresh={this.handleRefresh}
-                />
-                :
                     <Text>NIXUYA</Text>
+                :
+                    <FlatList
+                        data={this.state.articles}
+                        renderItem={({item}) =>  <Article article={item}/>}
+                        keyExtractor={item => item.url}
+                        refreshing={this.state.refreshing}
+                        onRefresh={this.handleRefresh}
+                    />
 
         );
     }

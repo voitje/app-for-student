@@ -3,17 +3,20 @@ import {View, StyleSheet, Text, TouchableOpacity, FlatList} from "react-native";
 import {styles} from "./styles";
 import Icon from 'react-native-vector-icons/AntDesign';
 import {Actions, Router, Scene} from "react-native-router-flux";
+import { NavigationActions } from 'react-navigation';
+
 import NewsScreen from "../../screens/NewsScreen";
 import mapDispatchToProps from "react-redux/lib/connect/mapDispatchToProps";
 import mapStateToProps from "react-redux/lib/connect/mapStateToProps";
 
 
 
-const OtherList = () => {
+const OtherList = (props) => {
     return(
         <View>
             <View style={styles.list}>
                 <TouchableOpacity
+                    onPress={()=>props.navigation.navigate("AcademicPerf")}
                     style={styles.item}
                 >
                     <Icon
@@ -28,6 +31,7 @@ const OtherList = () => {
                     </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
+                    onPress={() => props.navigation.navigate("Attendance")}
                     style={styles.item}
                 >
                     <Icon
@@ -42,6 +46,7 @@ const OtherList = () => {
                     </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
+                    onPress={() => props.navigation.navigate("SettingsApp")}
                     style={styles.item}
                 >
                     <Icon
@@ -70,9 +75,7 @@ const OtherList = () => {
                         About developers
                     </Text>
                 </TouchableOpacity>
-                <Router>
-                    <Scene key="home" component={NewsScreen} title="News" />
-                </Router>
+
             </View>
         </View>
     )

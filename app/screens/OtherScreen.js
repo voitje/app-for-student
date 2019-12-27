@@ -12,7 +12,7 @@ class Other extends Component {
         return (
             <View style={{ flex: 1}}>
                 <Profile />
-                <OtherList />
+                <OtherList navigation={this.props.navigation}/>
             </View>
         );
     }

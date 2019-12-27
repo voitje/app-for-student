@@ -12,8 +12,8 @@ import BottomNavigator from "./app/components/BottomNavigator/BottomNavigator";
 
 const RNRedux = () => (
     <Provider store = { store }>
-        <App />
+        <BottomNavigator/>
     </Provider>
 );
 
-AppRegistry.registerComponent(appName, RNRedux);
+AppRegistry.registerComponent(appName, ()=>RNRedux);

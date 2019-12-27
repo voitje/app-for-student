@@ -14,7 +14,9 @@ import NewsScreen from "./app/screens/NewsScreen";
 class App extends Component {
     render() {
         return (
+            <View>
               <BottomNavigator/>
+            </View>
         );
     }
 }

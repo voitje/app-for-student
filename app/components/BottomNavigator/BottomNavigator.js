@@ -1,5 +1,5 @@
-import { createBottomTabNavigator } from 'react-navigation-tabs';
-import { createAppContainer } from 'react-navigation';
+import {createBottomTabNavigator} from 'react-navigation-tabs';
+import {createAppContainer} from 'react-navigation';
 import NewsScreen from "../../screens/NewsScreen";
 import Other from "../../screens/OtherScreen";
 import Documents from "../../screens/DocumentsScreen";
@@ -7,6 +7,33 @@ import Icon from 'react-native-vector-icons/AntDesign';
 import React from "react";
 import Achivement from "../../screens/AchivementScreen";
 import MessageScreen from "../../screens/MessageScreen";
+import {createStackNavigator} from "react-navigation-stack";
+import OtherList from "../OtherList/OtherListComponent";
+import AcademicPerfScreen from "../../screens/AcademicPerfScreen";
+import AttedanceScreen from "../../screens/AttendanceScreen";
+import SettingsScreen from "../../screens/SettingsScreen";
+
+const CreateStackTest = createStackNavigator({
+        Other: {
+            screen: Other,
+            navigationOptions: {
+                header: null
+            }
+        },
+        AcademicPerf: {
+            screen: AcademicPerfScreen,
+            navigationOptions: {
+                header: null
+            }
+        },
+        Attendance: {
+            screen: AttedanceScreen,
+        },
+        SettingsApp: {
+            screen: SettingsScreen,
+        }
+    }
+);
 
 const NewsStackNavigator = createBottomTabNavigator(
     {
@@ -59,7 +86,7 @@ const NewsStackNavigator = createBottomTabNavigator(
             })
         },
         Other: {
-            screen: Other,
+            screen: CreateStackTest,
             navigationOptions: () => ({
                 tabBarIcon: ({tintColor}) => (
                     <Icon
