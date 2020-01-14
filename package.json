@@ -7,13 +7,17 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "android-windows": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res && react-native run-android"
   },
   "dependencies": {
+    "firebase": "^7.6.2",
     "native-base": "^2.13.8",
     "react": "16.9.0",
     "react-activity-feed": "^0.9.23",
     "react-native": "0.61.2",
+    "react-native-animatable": "^1.3.3",
+    "react-native-collapsible": "^1.5.1",
     "react-native-elements": "^1.2.7",
     "react-native-gesture-handler": "^1.4.1",
     "react-native-reanimated": "^1.3.0",

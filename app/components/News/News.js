@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import { FlatList } from 'react-native';
+import { FlatList, ActivityIndicator, View } from 'react-native';
 import { Text } from 'react-native';
 import { getUSANews } from './utils';
 import Article from './Article';
@@ -20,7 +20,7 @@ class News extends Component {
             .then(articles => {
                 this.setState({ articles, refreshing: false }, () => {console.log('FETCH', this.state.articles)});
             })
-            .catch(() => this.setState({ refreshing: false }));
+            .catch(() => this.setState({ refreshing: true }));
     };
 
     handleRefresh = () => {
@@ -31,7 +31,9 @@ class News extends Component {
         return (
                 this.state.refreshing
             ?
-                    <Text>NIXUYA</Text>
+                    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+                        <ActivityIndicator size='large' color='#0066cc'/>
+                    </View>
                 :
                     <FlatList
                         data={this.state.articles}
@@ -39,6 +41,8 @@ class News extends Component {
                         keyExtractor={item => item.url}
                         refreshing={this.state.refreshing}
                         onRefresh={this.handleRefresh}
+                        onEndReached={this.fetchNews}
+                        onEndReachedThreshold={0.7}
                     />
 
         );
